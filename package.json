@@ -1,12 +1,11 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "buyer-lead-intake-frontend",
+  "version": "1.0.0",
+  "description": "Frontend application for managing buyer leads with advanced filtering, search, and import/export capabilities",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.8.0",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^1.12.2",
     "bootstrap": "^5.3.8",
     "clsx": "^2.1.1",
@@ -14,6 +13,7 @@
     "react": "^19.1.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.1",
+    "react-router-bootstrap": "^0.26.3",
     "react-router-dom": "^7.9.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
@@ -23,7 +23,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "test:ci": "CI=true react-scripts test --coverage --watchAll=false",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .js,.jsx",
+    "lint:fix": "eslint src --ext .js,.jsx --fix",
+    "analyze": "npm run build && npx serve -s build"
   },
   "eslintConfig": {
     "extends": [
@@ -42,5 +47,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "jest": "^27.5.1"
   }
 }
